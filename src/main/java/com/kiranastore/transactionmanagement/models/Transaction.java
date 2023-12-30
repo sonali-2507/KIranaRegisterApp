@@ -30,6 +30,8 @@ public class Transaction extends BaseTransaction{
     private String currency;
     @Enumerated (EnumType.ORDINAL)
     private PaymentType paymentType;
+
+
     public double getAmountInUSD() {
         amount = amount + (quantity * rate);
         if("USD".equals(currency)){
@@ -46,7 +48,7 @@ public class Transaction extends BaseTransaction{
     private double getExchangeRate(String targetCurrency){
         // Implement the logic to call the currency conversion API and get the exchange rate
         // You can use libraries like RestTemplate, HttpClient, or other HTTP clients
-        TransactionController transactionController = new TransactionController();
+
 
         // Example using RestTemplate (you need to handle exceptions and error cases)
         String apiURL = "https://api.fxratesapi.com/latest";
@@ -57,7 +59,7 @@ public class Transaction extends BaseTransaction{
 
             if(response != null && response.isSuccess()){
 //                System.out.println("response "+response.getRates().get("INR"));
-                return response.getRates().get("INR");
+                return response.getRates().get(currency);
 
             }
         }

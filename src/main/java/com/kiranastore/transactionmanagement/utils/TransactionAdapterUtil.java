@@ -12,9 +12,10 @@ public class TransactionAdapterUtil {
         transaction.setProductName(transactionRequest.getProductName());
         transaction.setQuantity(transactionRequest.getQuantity());
         transaction.setRate(transactionRequest.getRate());
-        transaction.setAmount(transaction.getAmountInUSD());
 
-        transaction.setCurrency(transactionRequest.getCurrency());
+
+        transaction.setCurrency(transactionRequest.getCurrency());//set currency
+        transaction.setAmount(transaction.getAmountInUSD());
         transaction.setPaymentType(transactionRequest.getPaymentType());
 
         return transaction;
