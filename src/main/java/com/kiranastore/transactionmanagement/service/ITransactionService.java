@@ -10,5 +10,5 @@ public interface ITransactionService {
 
    List<Transaction> getTransaction();
 
-    Transaction getTransactionById(Integer id);
+    Transaction getTransactionById(Long id);
 }

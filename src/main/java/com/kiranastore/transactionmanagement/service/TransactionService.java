@@ -17,7 +17,7 @@ public class TransactionService implements ITransactionService{
     @Autowired
     private TransactionRepository transactionRepository;
     private List<Transaction> transactions = new ArrayList<>();
-    private int transactionId = 1;
+//    private int transactionId = 1;
 
     @Override
     public Transaction saveTransaction(TransactionRequest transactionRequest) {
@@ -33,7 +33,7 @@ public class TransactionService implements ITransactionService{
     }
 
     @Override
-    public Transaction getTransactionById(Integer id) {
+    public Transaction getTransactionById(Long id) {
         for (Transaction transaction :transactions){
             if(transaction.getTransactionId() == id){
                 return transaction;
